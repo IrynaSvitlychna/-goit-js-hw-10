@@ -1,0 +1,59 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 30px;
+}
+
+.delay {
+  display: block;
+  width: 360px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  padding-left: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  outline: none;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.delay:hover,
+.delay:focus {
+  border-color: #000;
+}
+.delay:active {
+  border-color: #4e75ff;
+}
+fieldset {
+  display: flex;
+  gap: 48px;
+  width: 360px;
+  height: 64px;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid #808080;
+}
+
+.create-btn {
+  width: 360px;
+  height: 40px;
+  background-color: #4e75ff;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.04em;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.create-btn:hover,
+.create-btn:focus {
+  background-color: #6c8cff;
+}
