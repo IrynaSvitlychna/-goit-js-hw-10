@@ -15,7 +15,9 @@ createForm.addEventListener('submit', event => {
   
      
     const promise = new Promise((resolve, reject) => {
-      if (radioChecked.value === 'fulfilled') {
+      setTimeout(() => {
+        if (radioChecked.value === 'fulfilled')
+            {
         resolve(delay);
       } else {
         reject(delay);
@@ -25,8 +27,7 @@ createForm.addEventListener('submit', event => {
     
     promise
       .then(delay => {
-        setTimeout(() => {
-          iziToast.success({
+            iziToast.success({
             title: 'OK',
             message: `Fulfilled promise in ${delay}ms`,
             position: 'topRight',
@@ -37,11 +38,10 @@ createForm.addEventListener('submit', event => {
             messageSize: '16px',
             progressBarColor: '#B5EA7C',
           });
-        }, delay);
+        });
       })
       .catch(delay => {
-        setTimeout(() => {
-          iziToast.error({
+            iziToast.error({
             title: 'Error',
             message: `Rejected promise in ${delay}ms`,
             position: 'topRight',
@@ -52,7 +52,7 @@ createForm.addEventListener('submit', event => {
             messageSize: '16px',
             progressBarColor: '#FFBEBE',
           });
-        }, delay);
-      });
+        });
+      
     createForm.reset();
   });

@@ -12,12 +12,12 @@ import xOctagon from "../img/bi_x-octagon.svg";
 
 let elements = document.getElementsByClassName('label');
 
-for (var i = 0; i < elements.length; i++) {
-  elements[i].textContent = elements[i].textContent.toUpperCase();
-}
+// for (var i = 0; i < elements.length; i++) {
+//   elements[i].textContent = elements[i].textContent.toUpperCase();
+// }
 
 
-const startBtn = document.querySelector('[data-start]');
+const startButton = document.querySelector('[data-start]');
 
 let userSelectedDate;
 
@@ -35,11 +35,11 @@ const options = {
     });
   },
   onClose: function (selectedDates) {
-    console.log(selectedDates[0]);
+   
     userSelectedDate = selectedDates[0].getTime();
     if (userSelectedDate >= Date.now()) {
-      startBtn.removeAttribute('disabled');
-      startBtn.classList.add('button-enabled');
+      startButton.removeAttribute('disabled');
+      startButton.classList.add('button-enabled');
     } else {
       iziToast.error({
         title: 'Error',
@@ -52,8 +52,8 @@ const options = {
         messageSize: '16px',
         progressBarColor: '#B51B1B',
       });
-      startBtn.setAttribute('disabled', true);
-      startBtn.classList.remove('button-enabled');
+      startButton.setAttribute('disabled', true);
+      startButton.classList.remove('button-enabled');
     }
   },
 };
@@ -81,17 +81,23 @@ function convertMs(ms) {
   }
   
 
-   startBtn.addEventListener('click', () => {
-    startBtn.setAttribute('disabled', true);
-    startBtn.classList.remove('button-enabled');
+  startButton.addEventListener('click', () => {
+    startButton.setAttribute('disabled', true);
+    startButton.classList.remove('button-enabled');
        
-    setInterval (() => {
+    const intervalId = setInterval (() => {
       const currentTime = Date.now();
       const difference = userSelectedDate - currentTime;
+
+       if (difference <=0) {
+        clearInterval(intervalId);
+        return;
+       }
+
       const time = convertMs(difference);
       const { days, hours, minutes, seconds } = time;
 
-    if (days >= 0 || hours >= 0 || minutes >= 0 || seconds >= 0) {
+  
       document.querySelector('[data-days').textContent = days
         .toString()
         .padStart(2, '0');
@@ -104,7 +110,6 @@ function convertMs(ms) {
       document.querySelector('[data-seconds]').textContent = seconds
         .toString()
         .padStart(2, '0');
-    }
-  }, 1000);
+    }, 1000);
 });
       
