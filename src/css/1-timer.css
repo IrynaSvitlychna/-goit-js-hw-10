@@ -134,36 +134,3 @@ span.flatpickr-day.selected:focus {
   color: #989898;
   background-color: #cfcfcf;
 }
-
-/* hover
-
-color: #000;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 1,5;
-letter-spacing: 0.64px; 
-
-border-radius: 4px;
-border: 1px solid #000;*/
-
-/* active 
-color: #000;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 1.5;
-letter-spacing: 0.64px; 
-border-radius: 4px;
-border: 1px solid #4E75FF;
-background-color: #FFF;
-*/
-
-/* border-radius: 4px;
-border: 1px solid #808080;
-color: #808080;
-border-radius: 4px;
-background: #FAFAFA; 
-*/

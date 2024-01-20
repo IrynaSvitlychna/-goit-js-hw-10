@@ -1,10 +1,12 @@
 //  Описаний у документації
-import izitoast from "izitoast";
+import iziToast from "izitoast";
 // Додатковий імпорт стилів
 import "izitoast/dist/css/iziToast.min.css";
 
 import vector from "../img/Vector.svg";
 import xOctagon from "../img/bi_x-octagon.svg";
+
+const createForm = document.querySelector('form');
 
 createForm.addEventListener('submit', event => {
     event.preventDefault();
