@@ -8,23 +8,23 @@ import xOctagon from "../img/bi_x-octagon.svg";
 
 const createForm = document.querySelector('form');
 
+
 createForm.addEventListener('submit', event => {
     event.preventDefault();
     const delay = event.currentTarget.elements.delay.value;
     const radioChecked = document.querySelector('input[name="state"]:checked');
   
-     
+    
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (radioChecked.value === 'fulfilled')
-            {
-        resolve(delay);
-      } else {
-        reject(delay);
-      }
+        if (radioChecked.value === 'fulfilled') {
+          resolve(delay);
+        } else {
+          reject(delay);
+        }
+      }, delay);
     });
   
-    
     promise
       .then(delay => {
             iziToast.success({
@@ -38,7 +38,6 @@ createForm.addEventListener('submit', event => {
             messageSize: '16px',
             progressBarColor: '#B5EA7C',
           });
-        });
       })
       .catch(delay => {
             iziToast.error({
@@ -53,6 +52,6 @@ createForm.addEventListener('submit', event => {
             progressBarColor: '#FFBEBE',
           });
         });
-      
+                  
     createForm.reset();
   });
